@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "CeraPro-Regular";
+  src: url("fonts/CeraPro-Regular.eot");
+  src: url("fonts/CeraPro-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/CeraPro-Regular.woff2") format("woff2"), url("fonts/CeraPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CeraPro-Medium";
+  src: url("fonts/CeraPro-Medium.eot");
+  src: url("fonts/CeraPro-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/CeraPro-Medium.woff2") format("woff2"), url("fonts/CeraPro-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: "CeraPro-Regular";
+}
+
+h1 {
+  font-family: "CeraPro-Medium";
+  margin-bottom: 1em;
+}
+
+body {
+  background-image: linear-gradient(to right, #2b3040, #4a4a4a);
+}
+
+.menu-header {
+  padding: 1em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-header img {
+  height: 2em;
+}
+.menu-header i {
+  font-size: 2em;
+}
+
+.call-to-action {
+  display: inline-block;
+  background: #2b3040;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1em;
+  border-radius: 2em;
+  text-decoration: none;
+  cursor: pointer;
+}
+.call-to-action:hover {
+  background: #545e7d;
+}
+
+.section-hero {
+  display: flex;
+  height: 18em;
+  position: relative;
+  padding: 2em 3em;
+  justify-content: space-between;
+}
+.section-hero .col-1 {
+  min-width: 50%;
+}
+.section-hero .col-2 {
+  min-width: 50%;
+  display: none;
+  z-index: 1;
+}
+.section-hero .col-2 img {
+  width: 110%;
+}
+.section-hero:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  content: "";
+  background-image: url("/public/images/uk-dot-map.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+.section-hero p {
+  margin-bottom: 1em;
+}
+
+.section-about-us {
+  height: 18em;
+  position: relative;
+  background-color: white;
+  transform: skewY(-12deg);
+}
+
+@media only screen and (min-width: 600px) {
+  .section-hero {
+    height: 80vh;
+  }
+  .section-hero .col-2 {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

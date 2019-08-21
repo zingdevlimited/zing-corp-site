@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "CeraPro-Regular";
+  src: url("fonts/CeraPro-Regular.eot");
+  src: url("fonts/CeraPro-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/CeraPro-Regular.woff2") format("woff2"),
+    url("fonts/CeraPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CeraPro-Medium";
+  src: url("fonts/CeraPro-Medium.eot");
+  src: url("fonts/CeraPro-Medium.eot?#iefix") format("embedded-opentype"),
+    url("fonts/CeraPro-Medium.woff2") format("woff2"),
+    url("fonts/CeraPro-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$slate: #2b3040;
+$grey: #4a4a4a;
+$red: #c7001c;
+$gradient: linear-gradient(to right, $slate, $grey);
+
+$alpha-white: adjust-color(white, $alpha: -0.6);
+
+$text-primary: adjust-color(white, $alpha: -0.05);
+$text-secondary: adjust-color(black, $alpha: -0.05);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $text-primary;
+  font-family: "CeraPro-Regular";
+}
+
+h1 {
+  font-family: "CeraPro-Medium";
+  margin-bottom: 1em;
+}
+
+body {
+  background-image: $gradient;
+}
+
+.menu-header {
+  padding: 1em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    height: 2em;
+  }
+
+  i {
+    font-size: 2em;
+  }
+}
+
+.call-to-action {
+  display: inline-block;
+  background: $slate;
+  border: 1px solid $alpha-white;
+  padding: 1em;
+  border-radius: 2em;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background: adjust-color($slate, $lightness: 20%);
+  }
+}
+
+.section-hero {
+  display: flex;
+  height: 18em;
+  position: relative;
+  padding: 2em 3em;
+  justify-content: space-between;
+
+  .col-1 {
+    min-width: 50%;
+  }
+
+  .col-2 {
+    min-width: 50%;
+    display: none;
+    z-index: 1;
+    img {
+      width: 110%;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    content: "";
+    background-image: url("/public/images/uk-dot-map.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+}
+
+.section-about-us {
+  height: 18em;
+  position: relative;
+  background-color: white;
+  transform: skewY(-12deg);
+}
+
+@media only screen and (min-width: 600px) {
+  .section-hero {
+    height: 80vh;
+
+    .col-2 {
+      display: block;
+    }
+  }
+}
