@@ -20,39 +20,124 @@
 
 $slate: #2b3040;
 $grey: #4a4a4a;
-$red: #c7001c;
+$zing-red: #c7001c;
 $gradient: linear-gradient(to right, $slate, $grey);
 
 $alpha-white: adjust-color(white, $alpha: -0.6);
 
 $text-primary: adjust-color(white, $alpha: -0.05);
-$text-secondary: adjust-color(black, $alpha: -0.05);
+$text-secondary: adjust-color(black, $alpha: -0.25);
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: $text-primary;
   font-family: "CeraPro-Regular";
 }
 
 h1 {
   font-family: "CeraPro-Medium";
   margin-bottom: 1em;
+  font-size: 2.5em;
+}
+
+h2 {
+  font-family: "CeraPro-Medium";
+  margin-bottom: 0.2em;
+  font-size: 2em;
+}
+
+a {
+  color: $text-primary;
+  text-decoration: none;
+
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $text-primary;
+  }
 }
 
 body {
+  color: $text-primary;
   background-image: $gradient;
+
+  main {
+    section .content-container {
+      min-height: 40vh;
+      padding: 2em 2em;
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .col-1 {
+        min-width: 50%;
+        z-index: 1;
+      }
+
+      .col-2 {
+        min-width: 50%;
+        z-index: 1;
+      }
+
+      .col-1,
+      .col-2 {
+        img {
+          display: none;
+          width: 100%;
+        }
+      }
+
+      p {
+        margin-bottom: 1em;
+      }
+    }
+
+    section:nth-child(2n) {
+      position: relative;
+      background-color: white;
+      transform: skewY(-6deg);
+
+      .content-container {
+        color: $text-secondary;
+        transform: skewY(6deg);
+      }
+
+      div {
+        color: $text-secondary;
+      }
+    }
+  }
+}
+
+.call-to-action.red {
+  background-color: $zing-red;
+}
+
+.col-1,
+.col-2 {
+  margin-bottom: 1em;
 }
 
 .menu-header {
-  padding: 1em 1em;
+  padding: 1em 2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  .nav-menu {
+    list-style: none;
+    display: none;
+    li {
+      margin-left: 1em;
+    }
+  }
+
   img {
-    height: 2em;
+    height: 3em;
   }
 
   i {
@@ -68,32 +153,21 @@ body {
   border-radius: 2em;
   text-decoration: none;
   cursor: pointer;
+  color: $text-primary;
 
   &:hover {
     background: adjust-color($slate, $lightness: 20%);
   }
+
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $text-primary;
+  }
 }
 
 .section-hero {
-  display: flex;
-  height: 18em;
-  position: relative;
-  padding: 2em 3em;
-  justify-content: space-between;
-
-  .col-1 {
-    min-width: 50%;
-  }
-
-  .col-2 {
-    min-width: 50%;
-    display: none;
-    z-index: 1;
-    img {
-      width: 110%;
-    }
-  }
-
   &:before {
     position: absolute;
     left: 0;
@@ -102,30 +176,64 @@ body {
     width: 100%;
     z-index: -1;
     content: "";
-    background-image: url("/public/images/uk-dot-map.png");
+    background-image: url("/public/images/point-map.svg");
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.3;
   }
-
-  p {
-    margin-bottom: 1em;
-  }
-}
-
-.section-about-us {
-  height: 18em;
-  position: relative;
-  background-color: white;
-  transform: skewY(-12deg);
 }
 
 @media only screen and (min-width: 600px) {
-  .section-hero {
-    height: 80vh;
+  .menu-header {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em 0;
+  }
 
+  body main section .content-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em 0;
+    flex-wrap: nowrap;
+
+    .col-1 {
+      padding-right: 1em;
+    }
     .col-2 {
-      display: block;
+      padding-left: 1em;
+    }
+
+    .col-1,
+    .col-2 {
+      img {
+        display: block;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu-header {
+    width: 70%;
+  }
+
+  body main section .content-container {
+    width: 70%;
+  }
+
+  .menu-header {
+    .nav-menu {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .call-to-action {
+        background-color: $zing-red;
+      }
+    }
+    i {
+      display: none;
     }
   }
 }
