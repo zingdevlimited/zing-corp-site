@@ -41,7 +41,35 @@ a:visited, a:hover, a:active, a:focus {
 
 body {
   color: rgba(255, 255, 255, 0.95);
+}
+body header {
   background-image: linear-gradient(to right, #2b3040, #4a4a4a);
+}
+body main section {
+  background-color: #efefef;
+  color: rgba(0, 0, 0, 0.75);
+  transform: skewY(-6deg);
+}
+body main section .content-container {
+  transform: skewY(6deg);
+}
+body main section:nth-child(2) {
+  margin-top: 430px;
+}
+body main section:nth-child(2n) {
+  position: relative;
+  background-color: white;
+  transform: skewY(-6deg);
+}
+body main section:nth-child(2n) .content-container {
+  color: rgba(0, 0, 0, 0.75);
+  transform: skewY(6deg);
+}
+body main section:nth-child(2n) div {
+  color: rgba(0, 0, 0, 0.75);
+}
+body main section:last-child {
+  margin-bottom: -100px;
 }
 body main section .content-container {
   min-height: 40vh;
@@ -68,21 +96,38 @@ body main section .content-container .col-2 img {
 body main section .content-container p {
   margin-bottom: 1em;
 }
-body main section:nth-child(2n) {
-  position: relative;
-  background-color: white;
-  transform: skewY(-6deg);
+body footer {
+  background-image: linear-gradient(to right, #2b3040, #4a4a4a);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 2em;
 }
-body main section:nth-child(2n) .content-container {
-  color: rgba(0, 0, 0, 0.75);
-  transform: skewY(6deg);
+body footer .logo {
+  margin-bottom: 1.5em;
 }
-body main section:nth-child(2n) div {
-  color: rgba(0, 0, 0, 0.75);
+body footer .logo img {
+  width: 200px;
+}
+body footer .links {
+  margin-bottom: 1.5em;
+}
+body footer .social {
+  margin-bottom: 1.5em;
+}
+body footer .social a {
+  margin: 0 0.5em;
+  cursor: pointer;
+}
+body footer .cr {
+  font-size: 0.9em;
 }
 
 .call-to-action.red {
   background-color: #c7001c;
+  border: none;
 }
 
 .col-1,
@@ -104,7 +149,7 @@ body main section:nth-child(2n) div {
   margin-left: 1em;
 }
 .menu-header img {
-  height: 3em;
+  height: 4em;
 }
 .menu-header i {
   font-size: 2em;
@@ -114,11 +159,13 @@ body main section:nth-child(2n) div {
   display: inline-block;
   background: #2b3040;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 1em;
+  padding: 0.5em 2em;
   border-radius: 2em;
   text-decoration: none;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.95);
+  position: relative;
+  z-index: 1;
 }
 .call-to-action:hover {
   background: #545e7d;
@@ -127,18 +174,98 @@ body main section:nth-child(2n) div {
   color: rgba(255, 255, 255, 0.95);
 }
 
+.section-hero {
+  position: absolute;
+  top: 96px;
+  width: 100%;
+  height: 600px;
+  background-image: linear-gradient(to right, #2b3040, #4a4a4a);
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.95);
+  transform: none;
+}
+.section-hero .content-container {
+  transform: none;
+}
 .section-hero:before {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
-  z-index: -1;
   content: "";
-  background-image: url("/public/images/point-map.svg");
+  background-image: url("/public/images/world-dot-map.png");
   background-size: cover;
   background-position: center;
   opacity: 0.3;
+}
+
+.section-what-we-do .content-container {
+  flex-direction: column;
+}
+.section-what-we-do .content-container .content-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-what-we-do .content-container .content-header .title-red {
+  color: #c7001c;
+  font-size: 1em;
+  line-height: 2em;
+}
+.section-what-we-do .content-container .content-header .title {
+  font-family: "CeraPro-Medium";
+  line-height: 1.3em;
+  text-align: center;
+}
+.section-what-we-do .content-container .content-header hr {
+  width: 100px;
+  height: 2px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  background: #c7001c;
+  border: none;
+}
+.section-what-we-do .content-container .content-body-path .row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+.section-what-we-do .content-container .content-body-path .row .linker {
+  min-width: 100px;
+  height: 308px;
+  position: relative;
+  display: none;
+}
+.section-what-we-do .content-container .content-body-path .row .linker img {
+  position: absolute;
+  top: 130px;
+  left: 25px;
+  z-index: -1;
+}
+.section-what-we-do .content-container .content-body-path .row .image {
+  display: none;
+}
+.section-what-we-do .content-container .content-body-path .row .text {
+  background: white;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section-what-we-do .content-container .content-body-path .row .text .title {
+  font-family: "CeraPro-Medium";
+}
+.section-what-we-do .content-container .content-body-path .row .text hr {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 2px;
+  width: 1em;
+  margin-top: 0.1em;
+  margin-bottom: 1em;
+}
+.section-what-we-do .content-container .content-body-path .row:nth-child(2n) .linker img {
+  left: -25px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -146,10 +273,12 @@ body main section:nth-child(2n) div {
     width: 80%;
     margin: 0 auto;
     padding: 1em 0;
+    max-width: 1024px;
   }
 
   body main section .content-container {
     width: 80%;
+    max-width: 1024px;
     margin: 0 auto;
     padding: 2em 0;
     flex-wrap: nowrap;
@@ -164,6 +293,17 @@ body main section:nth-child(2n) div {
 body main section .content-container .col-2 img {
     display: block;
   }
+
+  body main .section-what-we-do {
+    padding-bottom: 1em;
+  }
+
+  body main .section-what-we-do .content-container .content-body-path .row .linker {
+    display: block;
+  }
+  body main .section-what-we-do .content-container .content-body-path .row .text {
+    height: 308px;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .menu-header {
@@ -174,17 +314,26 @@ body main section .content-container .col-2 img {
     width: 70%;
   }
 
+  body main .section-what-we-do {
+    padding-bottom: 2em;
+  }
+
   .menu-header .nav-menu {
     width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .menu-header .nav-menu .call-to-action {
-    background-color: #c7001c;
-  }
   .menu-header i {
     display: none;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .section-what-we-do {
+    padding-bottom: 3em;
+  }
+  body main .section-what-we-do .content-container .content-body-path .row .image {
+    display: block;
   }
 }
 
