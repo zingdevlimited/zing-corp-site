@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zing</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <link rel="stylesheet" href="public/css/style.css" />
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeT_rQUAAAAAJ1BX9SZaPhhzm5Hccv2NrtKlD5c"></script>
+  </head>
+  <body>
+    <header>
+      <div class="menu-header">
+        <img src="public/images/zing.svg" alt="The Zing logo" />
+        <ul class="nav-menu">
+          <li>
+            <a href="/index.html">Services</a>
+          </li>
+          <li>
+            <a href="/index.html/#zing-and-twilio">Zing & Twilio</a>
+          </li>
+          <li>
+            <a href="/index.html/#coming-soon">Rapid Discovery</a>
+          </li>
+          <li>
+            <a href="/index.html/#coming-soon">Customer Success Stories</a>
+          </li>
+          <li>
+            <a class="call-to-action red" href="/contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+        <i class="material-icons md-24">menu</i>
+      </div>
+    </header>
+    <main>
+      <section class="section-contact-us">
+        <div class="content-container">
+          <div class="col-1">
+            <h1>Contact Us</h1>
+            <p>
+              Lets do something amazing together.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section-contact-form" id="submitted">
+        <div class="content-container">
+          <h3>Or leave a message and we'll get back to you ASAP.</h3>
+          <div class="contact-card">
+            <div class="col-1">
+              <h4>Phone</h4>
+              <h3>0808 168 9464</h3>
+              <h4>Email</h4>
+              <h3>conversations@zing.dev</h3>
+              <h4>Address</h4>
+              <h3>Beacon House, Ibstone Rd,</h3>
+              <h3>Stokenchurch, High Wycombe,</h3>
+              <h3>HP14 3WN</h3>
+            </div>
+            <div class="col-2">
+              <form action="#submitted">
+                <div class="row">
+                  <input type="text" placeholder="Enter First Name" required />
+                  <input type="text" placeholder="Enter Last Name" required />
+                </div>
+                <div class="row">
+                  <input type="email" placeholder="Enter Email" required />
+                  <input type="text" placeholder="Enter Subject" required />
+                </div>
+                <div class="row">
+                  <textarea placeholder="Enter Message" required></textarea>
+                </div>
+                <div class="row">
+                  <button type="submit">Submit now</button>
+                </div>
+              </form>
+              <div class="thanks" style="display: none;">
+                <h4>Thanks for contacting us!</h4>
+                <h4>We'll get back to you ASAP</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="logo">
+        <img src="public/images/zing.svg" alt="The Zing logo" />
+      </div>
+      <div class="links">
+        <a href="#">Get In Touch</a> | <a href="#">Resources</a> |
+        <a href="#">Glossary</a> | <a href="#">Careers</a>
+      </div>
+      <div class="social">
+        <a href="#">
+          <img src="public/images/facebook.png" alt="Go To Zing Facebook" />
+        </a>
+        <a href="#">
+          <img src="public/images/twitter.png" alt="Go To Zing Twitter" />
+        </a>
+        <a href="#">
+          <img src="public/images/linkedin.png" alt="Go To Zing Linkedin" />
+        </a>
+        <a href="#">
+          <img src="public/images/youtube.png" alt="Go To Zing YouTube" />
+        </a>
+        <a href="#">
+          <img src="public/images/instagram.png" alt="Go To Zing Instagram" />
+        </a>
+      </div>
+      <div class="cr">
+        &copy; Zing Pvt Ltd 2019
+      </div>
+    </footer>
+    <script>
+      function hasSubmitted() {
+        if (window.location.hash && window.location.hash === "#submitted") {
+          document.getElementsByTagName("form")[0].style.cssText =
+            "display: none";
+          document.getElementsByClassName("thanks")[0].style.cssText = "";
+        }
+      }
+
+      hasSubmitted();
+
+      function submit(e) {
+        console.dir(e);
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha
+            .execute("reCAPTCHA_site_key", { action: "homepage" })
+            .then(function(token) {
+              alert(token);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
