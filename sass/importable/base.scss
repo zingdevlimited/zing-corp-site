@@ -1,64 +1,6 @@
-@font-face {
-  font-family: "CeraPro-Regular";
-  src: url("fonts/CeraPro-Regular.eot");
-  src: url("fonts/CeraPro-Regular.eot?#iefix") format("embedded-opentype"),
-    url("fonts/CeraPro-Regular.woff2") format("woff2"),
-    url("fonts/CeraPro-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CeraPro-Medium";
-  src: url("fonts/CeraPro-Medium.eot");
-  src: url("fonts/CeraPro-Medium.eot?#iefix") format("embedded-opentype"),
-    url("fonts/CeraPro-Medium.woff2") format("woff2"),
-    url("fonts/CeraPro-Medium.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-$slate: #2b3040;
-$grey: #4a4a4a;
-$light-grey: #efefef;
-$zing-red: #c7001c;
-$gradient: linear-gradient(to right, $slate 10%, $grey 60%);
-
-$alpha-white: adjust-color(white, $alpha: -0.6);
-
-$text-primary: adjust-color(white, $alpha: -0.05);
-$text-secondary: adjust-color(black, $alpha: -0.25);
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "CeraPro-Regular";
-}
-
-h1 {
-  font-family: "CeraPro-Medium";
-  margin-bottom: 1em;
-  font-size: 2.5em;
-}
-
-h2 {
-  font-family: "CeraPro-Medium";
-  margin-bottom: 0.2em;
-  font-size: 2em;
-}
-
-a {
-  color: $text-primary;
-  text-decoration: none;
-
-  &:visited,
-  &:hover,
-  &:active,
-  &:focus {
-    color: $text-primary;
-  }
-}
+@import "fonts";
+@import "variables";
+@import "reset";
 
 body {
   color: $text-primary;
