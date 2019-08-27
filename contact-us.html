@@ -11,33 +11,92 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
 
-    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="stylesheet" href="public/css/contact-us.css" />
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LeT_rQUAAAAAJ1BX9SZaPhhzm5Hccv2NrtKlD5c"></script>
   </head>
   <body>
     <header>
       <div class="menu-header">
-        <img src="public/images/zing.svg" alt="The Zing logo" />
-        <ul class="nav-menu">
-          <li>
-            <a href="/index.html">Services</a>
-          </li>
-          <li>
-            <a href="/index.html/#zing-and-twilio">Zing & Twilio</a>
-          </li>
-          <li>
-            <a href="/index.html/#coming-soon">Rapid Discovery</a>
-          </li>
-          <li>
-            <a href="/index.html/#coming-soon">Customer Success Stories</a>
-          </li>
-          <li>
-            <a class="call-to-action red" href="/contact-us.html">Contact Us</a>
-          </li>
-        </ul>
+        <a href="/index.html">
+          <img src="public/images/zing.svg" alt="The Zing logo" />
+        </a>
+        <div class="hideable">
+          <ul class="nav-menu">
+            <li>
+              Where To?
+              <i class="material-icons md-24">clear</i>
+            </li>
+            <li>
+              <a href="#home">Services</a>
+            </li>
+            <li>
+              <a href="#zing-and-twilio">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="#coming-soon">Rapid Discovery</a>
+            </li>
+            <li>
+              <a href="#coming-soon">Customer Success Stories</a>
+            </li>
+            <li>
+              <a class="call-to-action red" href="/contact-us.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="static-menu">
+          <ul class="nav-menu">
+            <li>
+              <a href="#home">Services</a>
+            </li>
+            <li>
+              <a href="#zing-and-twilio">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="#coming-soon">Rapid Discovery</a>
+            </li>
+            <li>
+              <a href="#coming-soon">Customer Success Stories</a>
+            </li>
+            <li>
+              <a class="call-to-action red" href="/contact-us.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="nav-menu-blockout"></div>
         <i class="material-icons md-24">menu</i>
       </div>
+      <script>
+        const menuIcon = document.querySelector(
+          ".menu-header>i.material-icons.md-24"
+        );
+        const container = document.querySelector(
+          ".menu-header .nav-menu-blockout"
+        );
+        const navMenu = document.querySelector(".menu-header .nav-menu");
+
+        if (menuIcon && navMenu) {
+          container.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          navMenu.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          menuIcon.onclick = () => {
+            container.classList.add("shown");
+            navMenu.classList.add("show-nav");
+            navMenu.classList.remove("hide-nav");
+          };
+        }
+      </script>
     </header>
     <main>
       <section class="section-contact-us">
