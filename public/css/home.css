@@ -38,6 +38,9 @@ a {
 a:visited, a:hover, a:active, a:focus {
   color: rgba(255, 255, 255, 0.95);
 }
+a.active {
+  border-bottom: 2px solid #c7001c;
+}
 
 @keyframes slidein {
   from {
@@ -218,7 +221,7 @@ header .menu-header .static-menu .nav-menu {
 }
 header .menu-header .static-menu .nav-menu li {
   margin-left: 1em;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 header .menu-header img {
   height: 4em;
@@ -384,8 +387,7 @@ body main section.section-contact-form .content-container .contact-card:before {
 }
 .section-what-we-do .content-container .content-header .title-red {
   color: #c7001c;
-  font-size: 1em;
-  line-height: 2em;
+  line-height: 1.3em;
 }
 .section-what-we-do .content-container .content-header .title {
   font-family: "CeraPro-Medium";
@@ -499,14 +501,6 @@ body main section .content-container .col-2 img {
   body main .section-what-we-do {
     padding-bottom: 2em;
   }
-}
-@media only screen and (min-width: 1440px) {
-  body main .section-what-we-do {
-    padding-bottom: 3em;
-  }
-  body main .section-what-we-do .content-container .content-body-path .row .image {
-    display: block;
-  }
 
   body header .menu-header {
     padding: 1em 0;
@@ -522,6 +516,14 @@ body main section .content-container .col-2 img {
   }
   body header .menu-header i.material-icons.md-24 {
     display: none;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .section-what-we-do {
+    padding-bottom: 3em;
+  }
+  body main .section-what-we-do .content-container .content-body-path .row .image {
+    display: block;
   }
 }
 

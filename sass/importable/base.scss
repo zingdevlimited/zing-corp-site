@@ -195,7 +195,7 @@ header {
 
         li {
           margin-left: 1em;
-          font-size: 1.1em;
+          font-size: 1em;
         }
       }
     }
@@ -519,17 +519,6 @@ body main section.section-contact-form {
   body main .section-what-we-do {
     padding-bottom: 2em;
   }
-}
-
-@media only screen and (min-width: 1440px) {
-  body main .section-what-we-do {
-    padding-bottom: 3em;
-    .content-container .content-body-path .row {
-      .image {
-        display: block;
-      }
-    }
-  }
 
   body header .menu-header {
     padding: 1em 0;
@@ -547,6 +536,17 @@ body main section.section-contact-form {
 
     i.material-icons.md-24 {
       display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  body main .section-what-we-do {
+    padding-bottom: 3em;
+    .content-container .content-body-path .row {
+      .image {
+        display: block;
+      }
     }
   }
 }

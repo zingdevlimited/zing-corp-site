@@ -28,19 +28,16 @@
               <i class="material-icons md-24">clear</i>
             </li>
             <li>
-              <a href="#home">Services</a>
+              <a href="/contact-us.html#contact-us">Services</a>
             </li>
             <li>
-              <a href="#zing-and-twilio">Zing & Twilio</a>
+              <a href="/contact-us.html#contact-us">Zing & Twilio</a>
             </li>
             <li>
-              <a href="#coming-soon">Rapid Discovery</a>
+              <a href="/contact-us.html#contact-us">Case Studies</a>
             </li>
             <li>
-              <a href="#coming-soon">Customer Success Stories</a>
-            </li>
-            <li>
-              <a class="call-to-action red" href="/contact-us.html"
+              <a class="call-to-action red" href="/contact-us.html#contact-us"
                 >Contact Us</a
               >
             </li>
@@ -49,19 +46,16 @@
         <div class="static-menu">
           <ul class="nav-menu">
             <li>
-              <a href="#home">Services</a>
+              <a href="/contact-us.html#contact-us">Services</a>
             </li>
             <li>
-              <a href="#zing-and-twilio">Zing & Twilio</a>
+              <a href="/contact-us.html#contact-us">Zing & Twilio</a>
             </li>
             <li>
-              <a href="#coming-soon">Rapid Discovery</a>
+              <a href="/contact-us.html#contact-us">Case Studies</a>
             </li>
             <li>
-              <a href="#coming-soon">Customer Success Stories</a>
-            </li>
-            <li>
-              <a class="call-to-action red" href="/contact-us.html"
+              <a class="call-to-action red" href="/contact-us.html#contact-us"
                 >Contact Us</a
               >
             </li>
@@ -99,7 +93,7 @@
       </script>
     </header>
     <main>
-      <section class="section-contact-us">
+      <section class="section-contact-us" id="contact-us">
         <div class="content-container">
           <div class="col-1">
             <h1>Contact Us</h1>
@@ -175,10 +169,16 @@
         </a>
       </div>
       <div class="cr">
-        &copy; Zing Pvt Ltd 2019
+        &copy; ProspectSoft Limited 2019
       </div>
     </footer>
     <script>
+      // document
+      //   .querySelectorAll(`li>a[href*='${location.pathname}']`)
+      //   .forEach((link, key) => {
+      //     link.classList.add("active");
+      //   });
+
       function hasSubmitted() {
         if (window.location.hash && window.location.hash === "#submitted") {
           document.getElementsByTagName("form")[0].style.cssText =
