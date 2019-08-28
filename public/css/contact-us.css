@@ -148,7 +148,7 @@ body footer .cr {
 
 .call-to-action.red {
   background-color: #c7001c;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .col-1,

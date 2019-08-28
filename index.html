@@ -16,7 +16,7 @@
   <body>
     <header>
       <div class="menu-header">
-        <a href="/index.html">
+        <a href="/">
           <img src="public/images/zing.svg" alt="The Zing logo" />
         </a>
         <div class="hideable">
@@ -247,12 +247,13 @@
       </div>
     </footer>
     <script>
-      console.log("hello");
-      document
-        .querySelectorAll(`li>a[href*='${location.pathname}']`)
-        .forEach((link, key) => {
-          link.classList.add("active");
-        });
+      if (location.pathname != "") {
+        document
+          .querySelectorAll(`li>a[href*='${location.pathname}']`)
+          .forEach((link, key) => {
+            link.classList.add("active");
+          });
+      }
     </script>
   </body>
 </html>
