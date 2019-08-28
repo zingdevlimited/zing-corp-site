@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "CeraPro-Regular";
+}
+
+h1 {
+  font-family: "CeraPro-Medium";
+  margin-bottom: 1em;
+  font-size: 2.5em;
+}
+
+h2 {
+  font-family: "CeraPro-Medium";
+  margin-bottom: 0.2em;
+  font-size: 2em;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+}
+
+a:visited, a:hover, a:active, a:focus {
+  color: rgba(255, 255, 255, 0.95);
+}
+/*# sourceMappingURL=reset.css.map */
