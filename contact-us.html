@@ -128,17 +128,17 @@
               <h3>HP14 3WN</h3>
             </div>
             <div class="col-2">
-              <form action="#submitted">
+              <form id="contact-us-form">
                 <div class="row">
-                  <input type="text" placeholder="Enter First Name" required />
-                  <input type="text" placeholder="Enter Last Name" required />
+                  <input name="first-name" type="text" placeholder="Enter First Name" required />
+                  <input name="last-name" type="text" placeholder="Enter Last Name" required />
                 </div>
                 <div class="row">
-                  <input type="email" placeholder="Enter Email" required />
-                  <input type="text" placeholder="Enter Subject" required />
+                  <input name="email" type="email" placeholder="Enter Email" required />
+                  <input name="subject" type="text" placeholder="Enter Subject" required />
                 </div>
                 <div class="row">
-                  <textarea placeholder="Enter Message" required></textarea>
+                  <textarea name="message" placeholder="Enter Message" required></textarea>
                 </div>
                 <div class="row">
                   <button class="contact-submit" type="submit">Submit now</button>
@@ -199,16 +199,43 @@
 
       hasSubmitted();
 
-      function submit(e) {
-        console.dir(e);
-        e.preventDefault();
+      const f = () => {
+        const form = document.getElementById("contact-us-form");
+        form.onsubmit = submit;
+      }
+      f();
+
+      function submit() {
         grecaptcha.ready(function() {
           grecaptcha
-            .execute("reCAPTCHA_site_key", { action: "homepage" })
+            .execute("6LcZlbUUAAAAAB0XnbgU8DjrBuVbvN92XL7a8ygU", { action: "ContactUsForm" })
             .then(function(token) {
-              alert(token);
+              const form = document.getElementById("contact-us-form");
+              const data = new FormData(form);
+
+              const postData = {
+                "Contact": {
+                  "FirstName":data.get("first-name"),
+                  "LastName":data.get("last-name"),
+                  "Email":data.get("email"),
+                },
+                "Message": {
+                  "Subject":data.get("subject"),
+                  "Message":data.get("message")
+                },
+                "Token":token
+              }
+              
+              fetch("http://localhost:5000/contacts",{
+                method:"POST",
+                body:JSON.stringify(postData),
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              }).then(res => console.log(res))
             });
         });
+        return false;
       }      
     </script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
