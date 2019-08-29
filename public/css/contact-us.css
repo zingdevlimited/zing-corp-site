@@ -536,4 +536,9 @@ input[type="text"]
   font-family: CeraPro-Regular;
 }
 
+body main section.section-contact-form div.content-container div.col-2 div.row button.contact-submit{
+  background-color: #c7001c; 
+  border: none;
+}
+
 /*# sourceMappingURL=contact-us.css.map */
