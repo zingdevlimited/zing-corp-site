@@ -2,13 +2,18 @@
 <html lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics DO NOT CHANGE THAT -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146603057-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-146603057-1"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'UA-146603057-1');
+      gtag("config", "UA-146603057-1");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +26,11 @@
     />
 
     <link rel="stylesheet" href="public/css/contact-us.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+    />
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LeT_rQUAAAAAJ1BX9SZaPhhzm5Hccv2NrtKlD5c"></script>
   </head>
@@ -115,7 +124,9 @@
       </section>
       <section class="section-contact-form" id="submitted">
         <div class="content-container">
-          <h2 class="contact-form-title">Or leave a message and we'll get back to you ASAP.</h2>
+          <h2 class="contact-form-title">
+            Or leave a message and we'll get back to you ASAP.
+          </h2>
           <div class="contact-card">
             <div class="col-1">
               <h4>Phone</h4>
@@ -130,18 +141,44 @@
             <div class="col-2">
               <form id="contact-us-form">
                 <div class="row">
-                  <input name="first-name" type="text" placeholder="Enter First Name" required />
-                  <input name="last-name" type="text" placeholder="Enter Last Name" required />
+                  <input
+                    name="first-name"
+                    type="text"
+                    placeholder="Enter First Name"
+                    required
+                  />
+                  <input
+                    name="last-name"
+                    type="text"
+                    placeholder="Enter Last Name"
+                    required
+                  />
                 </div>
                 <div class="row">
-                  <input name="email" type="email" placeholder="Enter Email" required />
-                  <input name="subject" type="text" placeholder="Enter Subject" required />
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Enter Email"
+                    required
+                  />
+                  <input
+                    name="subject"
+                    type="text"
+                    placeholder="Enter Subject"
+                    required
+                  />
                 </div>
                 <div class="row">
-                  <textarea name="message" placeholder="Enter Message" required></textarea>
+                  <textarea
+                    name="message"
+                    placeholder="Enter Message"
+                    required
+                  ></textarea>
                 </div>
                 <div class="row">
-                  <button class="contact-submit" type="submit">Submit now</button>
+                  <button class="contact-submit" type="submit">
+                    Submit now
+                  </button>
                 </div>
               </form>
               <div class="thanks" style="display: none;">
@@ -183,12 +220,6 @@
       </div>
     </footer>
     <script>
-      // document
-      //   .querySelectorAll(`li>a[href*='${location.pathname}']`)
-      //   .forEach((link, key) => {
-      //     link.classList.add("active");
-      //   });
-
       function hasSubmitted() {
         if (window.location.hash && window.location.hash === "#submitted") {
           document.getElementsByTagName("form")[0].style.cssText =
@@ -202,65 +233,77 @@
       const f = () => {
         const form = document.getElementById("contact-us-form");
         form.onsubmit = submit;
-      }
+      };
       f();
 
       function submit() {
         grecaptcha.ready(function() {
           grecaptcha
-            .execute("6LcZlbUUAAAAAB0XnbgU8DjrBuVbvN92XL7a8ygU", { action: "ContactUsForm" })
+            .execute("6LcZlbUUAAAAAB0XnbgU8DjrBuVbvN92XL7a8ygU", {
+              action: "ContactUsForm"
+            })
             .then(function(token) {
               const form = document.getElementById("contact-us-form");
               const data = new FormData(form);
 
               const postData = {
-                "Contact": {
-                  "FirstName":data.get("first-name"),
-                  "LastName":data.get("last-name"),
-                  "Email":data.get("email"),
+                Contact: {
+                  FirstName: data.get("first-name"),
+                  LastName: data.get("last-name"),
+                  Email: data.get("email")
                 },
-                "Message": {
-                  "Subject":data.get("subject"),
-                  "Message":data.get("message")
+                Message: {
+                  Subject: data.get("subject"),
+                  Message: data.get("message")
                 },
-                "Token":token
-              }
-              
-              fetch("http://localhost:5000/contacts",{
-                method:"POST",
-                body:JSON.stringify(postData),
+                Token: token
+              };
+
+              fetch("http://localhost:5000/contacts", {
+                method: "POST",
+                body: JSON.stringify(postData),
                 headers: {
                   "Content-Type": "application/json"
                 }
-              }).then(res => console.log(res))
+              }).then(res => console.log(res));
             });
         });
         return false;
-      }      
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-    <script>
-    window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#000"
-        },
-        "button": {
-          "background": "#fab400"
-        }
-      },
-      "position": "top",
-      "content": {
-        "message": "We use cookies simply to track visits to our website. We do not store any personal details. Learn more, including about available controls:",
-        "dismiss": "Got it!",
-        "link": "Cookies Policy",
-        "href": "https://www.zing.dev/cookiepolicy"
       }
-    });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+      data-cfasync="false"
+    ></script>
+    <script>
+      window.cookieconsent.initialise({
+        palette: {
+          popup: {
+            background: "#000"
+          },
+          button: {
+            background: "#fab400"
+          }
+        },
+        position: "top",
+        content: {
+          message:
+            "We use cookies simply to track visits to our website. We do not store any personal details. Learn more, including about available controls:",
+          dismiss: "Got it!",
+          link: "Cookies Policy",
+          href: "https://www.zing.dev/cookiepolicy"
+        }
+      });
     </script>
     <!-- DO NOT DELETE LINES 146 - 148 (HUBSPOT ANALYTICS)-->
     <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5721076.js"></script>
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js.hs-scripts.com/5721076.js"
+    ></script>
     <!-- End of HubSpot Embed Code -->
   </body>
 </html>
