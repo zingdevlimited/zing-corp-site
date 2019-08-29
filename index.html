@@ -26,7 +26,7 @@
     
     <header>
       <div class="menu-header">
-        <a href="/index.html">
+        <a href="/">
           <img src="public/images/zing.svg" alt="The Zing logo" />
         </a>
         <div class="hideable">
@@ -36,16 +36,13 @@
               <i class="material-icons md-24">clear</i>
             </li>
             <li>
-              <a href="#home">Services</a>
+              <a href="/contact-us.html">Services</a>
             </li>
             <li>
-              <a href="#zing-and-twilio">Zing & Twilio</a>
+              <a href="/contact-us.html">Zing & Twilio</a>
             </li>
             <li>
-              <a href="#coming-soon">Rapid Discovery</a>
-            </li>
-            <li>
-              <a href="#coming-soon">Customer Success Stories</a>
+              <a href="/contact-us.html">Case Studies</a>
             </li>
             <li>
               <a class="call-to-action red" href="/contact-us.html"
@@ -57,16 +54,13 @@
         <div class="static-menu">
           <ul class="nav-menu">
             <li>
-              <a href="#home">Services</a>
+              <a href="/contact-us.html">Services</a>
             </li>
             <li>
-              <a href="#zing-and-twilio">Zing & Twilio</a>
+              <a href="/contact-us.html">Zing & Twilio</a>
             </li>
             <li>
-              <a href="#coming-soon">Rapid Discovery</a>
-            </li>
-            <li>
-              <a href="#coming-soon">Customer Success Stories</a>
+              <a href="/contact-us.html">Case Studies</a>
             </li>
             <li>
               <a class="call-to-action red" href="/contact-us.html"
@@ -262,6 +256,15 @@
         &copy; ProspectSoft Limited 2019
       </div>
     </footer>
+    <script>
+      if (location.pathname != "") {
+        document
+          .querySelectorAll(`li>a[href*='${location.pathname}']`)
+          .forEach((link, key) => {
+            link.classList.add("active");
+          });
+      }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
     window.cookieconsent.initialise({
