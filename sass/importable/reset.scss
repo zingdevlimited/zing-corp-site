@@ -29,4 +29,8 @@ a {
   &:focus {
     color: $text-primary;
   }
+
+  &.active {
+    border-bottom: 2px solid $zing-red;
+  }
 }

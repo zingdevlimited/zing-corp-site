@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics DO NOT CHANGE THAT -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146603057-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-146603057-1');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -11,36 +20,89 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
 
-    <link rel="stylesheet" href="public/css/home.css" />
+    <link rel="stylesheet" href="public/css/contact-us.css" />
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LeT_rQUAAAAAJ1BX9SZaPhhzm5Hccv2NrtKlD5c"></script>
   </head>
   <body>
     <header>
       <div class="menu-header">
-        <img src="public/images/zing.svg" alt="The Zing logo" />
-        <ul class="nav-menu">
-          <li>
-            <a href="/index.html">Services</a>
-          </li>
-          <li>
-            <a href="/index.html/#zing-and-twilio">Zing & Twilio</a>
-          </li>
-          <li>
-            <a href="/index.html/#coming-soon">Rapid Discovery</a>
-          </li>
-          <li>
-            <a href="/index.html/#coming-soon">Customer Success Stories</a>
-          </li>
-          <li>
-            <a class="call-to-action red" href="/contact-us.html">Contact Us</a>
-          </li>
-        </ul>
+        <a href="/index.html">
+          <img src="public/images/zing.svg" alt="The Zing logo" />
+        </a>
+        <div class="hideable">
+          <ul class="nav-menu">
+            <li>
+              Where To?
+              <i class="material-icons md-24">clear</i>
+            </li>
+            <li>
+              <a href="/contact-us.html#contact-us">Services</a>
+            </li>
+            <li>
+              <a href="/contact-us.html#contact-us">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="/contact-us.html#contact-us">Case Studies</a>
+            </li>
+            <li>
+              <a class="call-to-action red" href="/contact-us.html#contact-us"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="static-menu">
+          <ul class="nav-menu">
+            <li>
+              <a href="/contact-us.html#contact-us">Services</a>
+            </li>
+            <li>
+              <a href="/contact-us.html#contact-us">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="/contact-us.html#contact-us">Case Studies</a>
+            </li>
+            <li>
+              <a class="call-to-action red" href="/contact-us.html#contact-us"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="nav-menu-blockout"></div>
         <i class="material-icons md-24">menu</i>
       </div>
+      <script>
+        const menuIcon = document.querySelector(
+          ".menu-header>i.material-icons.md-24"
+        );
+        const container = document.querySelector(
+          ".menu-header .nav-menu-blockout"
+        );
+        const navMenu = document.querySelector(".menu-header .nav-menu");
+
+        if (menuIcon && navMenu) {
+          container.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          navMenu.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          menuIcon.onclick = () => {
+            container.classList.add("shown");
+            navMenu.classList.add("show-nav");
+            navMenu.classList.remove("hide-nav");
+          };
+        }
+      </script>
     </header>
     <main>
-      <section class="section-contact-us">
+      <section class="section-contact-us" id="contact-us">
         <div class="content-container">
           <div class="col-1">
             <h1>Start a Conversation</h1>
@@ -116,10 +178,16 @@
         </a>
       </div>
       <div class="cr">
-        &copy; Zing Pvt Ltd 2019
+        &copy; ProspectSoft Limited 2019
       </div>
     </footer>
     <script>
+      // document
+      //   .querySelectorAll(`li>a[href*='${location.pathname}']`)
+      //   .forEach((link, key) => {
+      //     link.classList.add("active");
+      //   });
+
       function hasSubmitted() {
         if (window.location.hash && window.location.hash === "#submitted") {
           document.getElementsByTagName("form")[0].style.cssText =
@@ -140,7 +208,31 @@
               alert(token);
             });
         });
-      }
+      }      
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "#fab400"
+        }
+      },
+      "position": "top",
+      "content": {
+        "message": "We use cookies simply to track visits to our website. We do not store any personal details. Learn more, including about available controls:",
+        "dismiss": "Got it!",
+        "link": "Cookies Policy",
+        "href": "https://www.zing.dev/cookiepolicy"
+      }
+    });
+    </script>
+    <!-- DO NOT DELETE LINES 146 - 148 (HUBSPOT ANALYTICS)-->
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5721076.js"></script>
+    <!-- End of HubSpot Embed Code -->
   </body>
 </html>
