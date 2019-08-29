@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics DO NOT CHANGE -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146603057-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-146603057-1');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -10,32 +19,86 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-
     <link rel="stylesheet" href="public/css/home.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
   </head>
   <body>
+    
     <header>
       <div class="menu-header">
-        <img src="public/images/zing.svg" alt="The Zing logo" />
-        <ul class="nav-menu">
-          <li>
-            <a href="#home">Services</a>
-          </li>
-          <li>
-            <a href="#zing-and-twilio">Zing & Twilio</a>
-          </li>
-          <li>
-            <a href="#coming-soon">Rapid Discovery</a>
-          </li>
-          <li>
-            <a href="#coming-soon">Customer Success Stories</a>
-          </li>
-          <li>
-            <a class="call-to-action red" href="/contact-us.html">Contact Us</a>
-          </li>
-        </ul>
+        <a href="/">
+          <img src="public/images/zing.svg" alt="The Zing logo" />
+        </a>
+        <div class="hideable">
+          <ul class="nav-menu">
+            <li>
+              Where To?
+              <i class="material-icons md-24">clear</i>
+            </li>
+            <li>
+              <a href="/contact-us.html">Services</a>
+            </li>
+            <li>
+              <a href="/contact-us.html">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="/contact-us.html">Case Studies</a>
+            </li>
+            <li>
+              <a class="call-to-action red" href="/contact-us.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="static-menu">
+          <ul class="nav-menu">
+            <li>
+              <a href="/contact-us.html">Services</a>
+            </li>
+            <li>
+              <a href="/contact-us.html">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="/contact-us.html">Case Studies</a>
+            </li>
+            <li>
+              <a class="call-to-action red" href="/contact-us.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="nav-menu-blockout"></div>
         <i class="material-icons md-24">menu</i>
       </div>
+      <script>
+        const menuIcon = document.querySelector(
+          ".menu-header>i.material-icons.md-24"
+        );
+        const container = document.querySelector(
+          ".menu-header .nav-menu-blockout"
+        );
+        const navMenu = document.querySelector(".menu-header .nav-menu");
+
+        if (menuIcon && navMenu) {
+          container.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          navMenu.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          menuIcon.onclick = () => {
+            container.classList.add("shown");
+            navMenu.classList.add("show-nav");
+            navMenu.classList.remove("hide-nav");
+          };
+        }
+      </script>
     </header>
     <main>
       <section class="section-hero" id="home">
@@ -43,8 +106,8 @@
           <div class="col-1">
             <h1>Discovering Real Value Through Twilio</h1>
             <p>
-              We develop bespoke enterprise software solutions, for large scale
-              projects, in a wide range of industries
+              We develop bespoke enterprise software solutions around Twilio's
+              cloud communications platform for messaging, voice and video.
             </p>
             <a href="/contact-us.html" class="call-to-action">Get Connected</a>
           </div>
@@ -60,20 +123,19 @@
         <div class="content-container">
           <div class="col-1">
             <h2>Zing & Twilio</h2>
-            <p>Together we can make your ideas reality</p>
+            <p>Zing is a Twilio Gold Consulting Partner</p>
           </div>
           <div class="col-2">
-            <h2>Who we are</h2>
+            <h2>Who We Are</h2>
             <p>
-              Zing is part of the Sputnik Group of Companies, formed after the
-              MBO of ProspectSoft, by Andrew Ardron and backed by Maven Private
-              Equity in 2017.
+              Zing is part of the Sputnik Group of Companies that includes
+              ProspectSoft, a leading provider of SaaS CRM systems designed for
+              the Wholesale, Distribution and Manufacturing sectors.
             </p>
             <p>
-              ProspectSoft is the leading provider of SaaS CRM systems designed
-              for the Wholesale, Distribution and Manufacturing sectors.
+              There are currently over 20 Zingers and we're growing fast
             </p>
-            <a href="/zing-and-twilio" class="call-to-action red">Learn More</a>
+            <a href="/contact-us.html" class="call-to-action red">Learn More</a>
           </div>
         </div>
       </section>
@@ -139,10 +201,11 @@
                 <h3 class="title">Managed Services</h3>
                 <hr />
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Optio eligendi corporis nemo necessitatibus voluptate alias
-                  deleniti amet asperiores vel cupiditate quam, ut eos illum
-                  incidunt quidem accusantium adipisci? Facilis, quisquam!
+                  An ongoing relationship once our enterprise solutions are
+                  fully embedded within a customer. Development, maintenance
+                  and, where appropriate, support are delivered against agreed
+                  SLAs without losing our focus on Value. New initiatives are
+                  still delivered within our RapidValue&trade; methodology.
                 </p>
               </div>
             </div>
@@ -190,8 +253,41 @@
         </a>
       </div>
       <div class="cr">
-        &copy; Zing Pvt Ltd 2019
+        &copy; ProspectSoft Limited 2019
       </div>
     </footer>
+    <script>
+      if (location.pathname != "") {
+        document
+          .querySelectorAll(`li>a[href*='${location.pathname}']`)
+          .forEach((link, key) => {
+            link.classList.add("active");
+          });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "#fab400"
+        }
+      },
+      "position": "top",
+      "content": {
+        "message": "We use cookies simply to track visits to our website. We do not store any personal details. Learn more, including about available controls:",
+        "dismiss": "Got it!",
+        "link": "Cookies Policy",
+        "href": "https://www.zing.dev/cookiepolicy"
+      }
+    });
+    </script>
+    <!-- DO NOT DELETE LINES 197 - 199 (HUBSPOT ANALYTICS)-->
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5721076.js"></script>
+    <!-- End of HubSpot Embed Code -->
   </body>
 </html>
