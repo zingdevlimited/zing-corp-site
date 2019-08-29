@@ -1,0 +1,21 @@
+@import "../importable/base.scss";
+
+hr {
+  height: 2px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  background: $zing-red;
+  border: none;
+}
+
+.section-policy-text {
+  padding-top: 3em;
+  .content-container {
+    .sqs-block {
+      overflow-x: auto;
+    }
+    a {
+      color: $text-secondary;
+    }
+  }
+}
