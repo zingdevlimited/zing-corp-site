@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics DO NOT CHANGE -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146603057-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-146603057-1');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zing</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="public/css/home.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+  </head>
+  <body>
+    
+    <header>
+      <div class="menu-header">
+        <a href="/">
+          <img src="public/images/zing.svg" alt="The Zing logo" />
+        </a>
+        <div class="hideable">
+          <ul class="nav-menu">
+            <!-- <li>
+              Where To?
+              <i class="material-icons md-24">clear</i>
+            </li>
+            <li>
+              <a href="mailto:conversations@zing.dev">Services</a>
+            </li>
+            <li>
+              <a href="mailto:conversations@zing.dev">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="mailto:conversations@zing.dev">Case Studies</a>
+            </li> -->
+            <li>
+              <a class="call-to-action red" href="mailto:conversations@zing.dev"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="static-menu">
+          <ul class="nav-menu">
+            <!-- <li>
+              <a href="mailto:conversations@zing.dev">Services</a>
+            </li>
+            <li>
+              <a href="mailto:conversations@zing.dev">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="mailto:conversations@zing.dev">Case Studies</a>
+            </li> -->
+            <li>
+              <a class="call-to-action red" href="mailto:conversations@zing.dev"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="nav-menu-blockout"></div>
+        <i class="material-icons md-24">menu</i>
+      </div>
+      <script>
+        const menuIcon = document.querySelector(
+          ".menu-header>i.material-icons.md-24"
+        );
+        const container = document.querySelector(
+          ".menu-header .nav-menu-blockout"
+        );
+        const navMenu = document.querySelector(".menu-header .nav-menu");
+
+        if (menuIcon && navMenu) {
+          container.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          navMenu.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          menuIcon.onclick = () => {
+            container.classList.add("shown");
+            navMenu.classList.add("show-nav");
+            navMenu.classList.remove("hide-nav");
+          };
+        }
+      </script>
+    </header>
+
+    <main>
+      <section class="section-hero" id="home">
+        <div class="content-container">
+          <div class="col-1">
+            <h1>Hero Title</h1>
+            <p>
+              Hero Text
+            </p>
+          </div>
+          <div class="col-2">
+            <img
+              src="/public/images/hero-image.png"
+              alt="Placeholder Image"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="section-contact-form" id="submitted">
+            <div class="content-container">
+              <h2 class="contact-form-title">Contact Form (Needs Tweak)</h2>
+              <div class="contact-card">
+                <div class="col-1">
+                  <h1>Text me at:</h1>
+                  <h1>0800 00 1066</h1>
+                </div>
+                <div class="col-2">
+                  <form action="#submitted">
+                    <div class="row">
+                      <input type="text" placeholder="Enter First Name" required />
+                      <input type="text" placeholder="Enter Last Name" required />
+                    </div>
+                    <div class="row">
+                      <input type="email" placeholder="Enter Email" required />
+                      <input type="text" placeholder="Enter Subject" required />
+                    </div>
+                    <div class="row">
+                      <textarea placeholder="Enter Message" required></textarea>
+                    </div>
+                    <div class="row">
+                      <button class="contact-submit" type="submit">Submit now</button>
+                    </div>
+                  </form>
+                  <div class="thanks" style="display: none;">
+                    <h4>Thanks for contacting us!</h4>
+                    <h4>We'll get back to you ASAP</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section-what-we-do" id="what-we-do">
+                <div class="content-container">
+                  <div class="content-header">
+                    <h4 class="title-red">
+                      Title
+                    </h4>
+                    <h3 class="title">
+                      Needs to be bigger
+                    </h3>
+                    <h3 class="title">
+                      Might be fixed when homepage updated
+                    </h3>
+                    <hr />
+                  </div>
+                  <div class="content-body-path">
+                    <div class="row">
+                      <div class="linker">
+                        <img src="public/images/linker-left.png" alt="Linker Left" />
+                      </div>
+                      <div class="image">
+                        <img src="public/images/integration.png" alt="Integration" />
+                      </div>
+                      <div class="text">
+                        <h3 class="title">Example 1</h3>
+                        <hr />
+                        <p>
+                          Example text. Needs image.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="text">
+                        <h3 class="title">Example 2</h3>
+                        <hr />
+                        <p>
+                            Example text. Needs image.
+                        </p>
+                      </div>
+                      <div class="image">
+                        <img src="public/images/solutions.png" alt="Solutions" />
+                      </div>
+                      <div class="linker">
+                        <img src="public/images/linker-right.png" alt="Linker Right" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="linker"></div>
+                      <div class="image">
+                        <img src="public/images/services.png" alt="Services" />
+                      </div>
+                      <div class="text">
+                        <h3 class="title">Example 3</h3>
+                        <hr />
+                        <p>
+                            Example text. Needs image.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+    </main>
+
+    <footer>
+      <div class="logo">
+        <img src="public/images/zing.svg" alt="The Zing logo" />
+      </div>
+      <div class="links">
+        <a href="#">Get In Touch</a> | <a href="#">Resources</a> |
+        <a href="#">Glossary</a> | <a href="#">Careers</a>
+      </div>
+      <div class="social">
+        <a href="#">
+          <img src="public/images/facebook.png" alt="Go To Zing Facebook" />
+        </a>
+        <a href="#">
+          <img src="public/images/twitter.png" alt="Go To Zing Twitter" />
+        </a>
+        <a href="#">
+          <img src="public/images/linkedin.png" alt="Go To Zing Linkedin" />
+        </a>
+        <a href="#">
+          <img src="public/images/youtube.png" alt="Go To Zing YouTube" />
+        </a>
+        <a href="#">
+          <img src="public/images/instagram.png" alt="Go To Zing Instagram" />
+        </a>
+      </div>
+      <div class="cr">
+        &copy; ProspectSoft Limited 2019
+      </div>
+    </footer>
+    <script>
+      if (location.pathname != "/") {
+        document
+          .querySelectorAll(`li>a[href*='${location.pathname}']`)
+          .forEach((link, key) => {
+            link.classList.add("active");
+          });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "#fab400"
+        }
+      },
+      "position": "top",
+      "content": {
+        "message": "We use cookies simply to track visits to our website. We do not store any personal details. Learn more, including about available controls:",
+        "dismiss": "Got it!",
+        "link": "Cookies Policy",
+        "href": "https://www.zing.dev/cookiepolicy"
+      }
+    });
+    </script>
+    <!-- DO NOT DELETE LINES 197 - 199 (HUBSPOT ANALYTICS)-->
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5721076.js"></script>
+    <!-- End of HubSpot Embed Code -->
+  </body>
+</html>
