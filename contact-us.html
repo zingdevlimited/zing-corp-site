@@ -208,7 +208,27 @@
               alert(token);
             });
         });
+      }      
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "#fab400"
+        }
+      },
+      "position": "top",
+      "content": {
+        "message": "We use cookies simply to track visits to our website. We do not store any personal details. Learn more, including about available controls:",
+        "dismiss": "Got it!",
+        "link": "Cookies Policy",
+        "href": "https://www.zing.dev/cookiepolicy"
       }
+    });
     </script>
     <!-- DO NOT DELETE LINES 146 - 148 (HUBSPOT ANALYTICS)-->
     <!-- Start of HubSpot Embed Code -->
