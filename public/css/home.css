@@ -456,4 +456,9 @@ body main section .content-container .col-2 img {
   color:#c7001c;
 }
 
+input[type="text"]
+{
+  font-family: CeraPro-Regular;
+}
+
 /*# sourceMappingURL=home.css.map */
