@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zing</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <link rel="stylesheet" href="public/css/cookie.css" />
+  </head>
+  <body>
+    <header>
+      <div class="menu-header">
+        <a href="/">
+          <img src="public/images/zing.svg" alt="The Zing logo" />
+        </a>
+        <div class="hideable">
+          <ul class="nav-menu">
+            <li>
+              Where To?
+              <i class="material-icons md-24">clear</i>
+            </li>
+            <li>
+              <a href="/contact-us.html">Services</a>
+            </li>
+            <li>
+              <a href="/contact-us.html">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="/contact-us.html">Case Studies</a>
+            </li>
+            <li>
+              <a class="call-to-action red" href="/contact-us.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="static-menu">
+          <ul class="nav-menu">
+            <li>
+              <a href="/contact-us.html">Services</a>
+            </li>
+            <li>
+              <a href="/contact-us.html">Zing & Twilio</a>
+            </li>
+            <li>
+              <a href="/contact-us.html">Case Studies</a>
+            </li>
+            <li>
+              <a class="call-to-action red" href="/contact-us.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="nav-menu-blockout"></div>
+        <i class="material-icons md-24">menu</i>
+      </div>
+      <script>
+        const menuIcon = document.querySelector(
+          ".menu-header>i.material-icons.md-24"
+        );
+        const container = document.querySelector(
+          ".menu-header .nav-menu-blockout"
+        );
+        const navMenu = document.querySelector(".menu-header .nav-menu");
+
+        if (menuIcon && navMenu) {
+          container.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          navMenu.onclick = () => {
+            container.classList.remove("shown");
+            navMenu.classList.remove("show-nav");
+            navMenu.classList.add("hide-nav");
+          };
+          menuIcon.onclick = () => {
+            container.classList.add("shown");
+            navMenu.classList.add("show-nav");
+            navMenu.classList.remove("hide-nav");
+          };
+        }
+      </script>
+    </header>
+    <main>
+      <section class="section-hero" id="privacy">
+        <div class="content-container">
+          <div class="col-1">
+            <h1>Cookie Policy</h1>
+          </div>
+        </div>
+      </section>
+      <section class="section-cookie-text">
+        <div class="content-container">
+          <div class="col-1">
+            <h2>Cookie Policy</h2>
+            <hr />
+            <div
+              class="sqs-block html-block sqs-block-html"
+              data-block-type="2"
+              id="block-yui_3_17_2_1_1554279208051_19446"
+            >
+              <div class="sqs-block-content">
+                <p class="">
+                  Our cookie policy outlines the essential, analytical and
+                  marketing cookies we use to enhance your website experience
+                  with us...
+                </p>
+                <p class="">
+                  Cookies are small text files that are placed on to your
+                  computer by websites that you visit. Cookies are used to make
+                  websites work, to improve efficiency of websites, to improve
+                  the user’s experience and to provide usage information on
+                  websites. This information should make your website visits
+                  more productive by storing and using information on your
+                  website preferences and habits.<br />
+                  &nbsp;
+                </p>
+                <p class="">
+                  Your web browser can choose whether or not to accept cookies.
+                  Most web browser software is initially set up to accept
+                  them.<br /><br />We may offer cookies to you and you should
+                  ensure that your web browser is set up to not accept cookies
+                  if you do not wish to receive them. Please note that if you
+                  disable cookies, some services or website functionality may
+                  not be available. For further information about cookies and
+                  how to disable them please go to aboutcookies.org. We use the
+                  following cookies:
+                </p>
+                <ul data-rte-list="default">
+                  <li>
+                    <p class="">
+                      <strong>Essential cookies:</strong>&nbsp;these are cookies
+                      that are required for the operation of our website. They
+                      include, for example, cookies that enable you to log into
+                      secure areas of our website, and to use online forms.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="">
+                      <strong>Analytical cookies:</strong>&nbsp;these allow us
+                      to recognise and count the number of visitors and to see
+                      how visitors move around our website when they are using
+                      it. This helps us to improve the way our website works,
+                      for example, by ensuring that users are finding what they
+                      are looking for easily.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="">
+                      <strong>Marketing cookies:&nbsp;</strong>these are used to
+                      recognise you when you return to our website. This enables
+                      us to personalise our content for you, greet you by name
+                      and remember your preferences. These cookies also record
+                      your visit to our website, the pages you have visited and
+                      the links you have followed. We will use this information
+                      to make our website, the advertising displayed on it and
+                      communications sent more relevant to your interests.
+                    </p>
+                    <p class="">
+                      By continuing to use our website, you are accepting our
+                      use of these cookies that make advertising and
+                      communications more relevant to you and your interests,
+                      and further help us to improve the site.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="logo">
+        <img src="public/images/zing.svg" alt="The Zing logo" />
+      </div>
+      <div class="links">
+        <a href="/privacy">Privacy Policy</a> | <a href="/cookies">Cookies</a> |
+        <a
+          href="https://drive.google.com/uc?id=1EM1ffKnxVpQni3xdjZzmVqmLeNXg7ntL"
+          >Brand Guidelines</a
+        >
+        |
+        <a href="/contact-us.html">Contact Us</a>
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/company/zing-dev/">
+          <img
+            src="public/images/linkedin.png"
+            alt="Go To Zing Linkedin"
+            title="LinkedIn"
+          />
+        </a>
+        <a href="https://twitter.com/zingdevs">
+          <img
+            src="public/images/twitter.png"
+            alt="Go To Zing Twitter"
+            title="Twitter"
+          />
+        </a>
+        <a href="https://github.com/ZingSolutions">
+          <img
+            src="public/images/GitHub.png"
+            alt="Go To Zing GitHub"
+            title="GitHub"
+          />
+        </a>
+        <a href="https://www.youtube.com/channel/UCQaA6jM3zT6WcbXuzjgpAHw">
+          <img
+            src="public/images/youtube.png"
+            alt="Go To Zing YouTube"
+            title="YouTube"
+          />
+        </a>
+      </div>
+      <div class="cr">
+        &copy; ProspectSoft Limited 2019
+      </div>
+    </footer>
+    <script>
+      if (location.pathname != "/") {
+        document
+          .querySelectorAll(`li>a[href*='${location.pathname}']`)
+          .forEach((link, key) => {
+            link.classList.add("active");
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -26,36 +26,32 @@
               <i class="material-icons md-24">clear</i>
             </li>
             <li>
-              <a href="/contact-us.html">Services</a>
+              <a href="/contact-us">Services</a>
             </li>
             <li>
-              <a href="/contact-us.html">Zing & Twilio</a>
+              <a href="/contact-us">Zing & Twilio</a>
             </li>
             <li>
-              <a href="/contact-us.html">Case Studies</a>
+              <a href="/contact-us">Case Studies</a>
             </li>
             <li>
-              <a class="call-to-action red" href="/contact-us.html"
-                >Contact Us</a
-              >
+              <a class="call-to-action red" href="/contact-us">Contact Us</a>
             </li>
           </ul>
         </div>
         <div class="static-menu">
           <ul class="nav-menu">
             <li>
-              <a href="/contact-us.html">Services</a>
+              <a href="/contact-us">Services</a>
             </li>
             <li>
-              <a href="/contact-us.html">Zing & Twilio</a>
+              <a href="/contact-us">Zing & Twilio</a>
             </li>
             <li>
-              <a href="/contact-us.html">Case Studies</a>
+              <a href="/contact-us">Case Studies</a>
             </li>
             <li>
-              <a class="call-to-action red" href="/contact-us.html"
-                >Contact Us</a
-              >
+              <a class="call-to-action red" href="/contact-us">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -99,7 +95,7 @@
               We develop bespoke enterprise software solutions around Twilio's
               cloud communications platform for messaging, voice and video.
             </p>
-            <a href="/contact-us.html" class="call-to-action">Get Connected</a>
+            <a href="/contact-us" class="call-to-action">Get Connected</a>
           </div>
           <div class="col-2">
             <img
@@ -125,16 +121,16 @@
             <p>
               There are currently over 20 Zingers and we're growing fast
             </p>
-            <a href="/contact-us.html" class="call-to-action red">Learn More</a>
+            <a href="/contact-us" class="call-to-action red">Learn More</a>
           </div>
         </div>
       </section>
       <section class="section-what-we-do" id="what-we-do">
         <div class="content-container">
           <div class="content-header">
-            <h4 class="title-red">
-              WHAT WE DO
-            </h4>
+            <h2 class="title-red">
+              What We Do
+            </h2>
             <h3 class="title">
               We Focus on Customer
             </h3>
@@ -212,7 +208,7 @@
             <p>
               But you can still get in touch with us
             </p>
-            <a class="call-to-action red" href="/contact-us.html">Contact Us</a>
+            <a class="call-to-action red" href="/contact-us">Contact Us</a>
           </div>
         </div>
       </section>
@@ -222,24 +218,42 @@
         <img src="public/images/zing.svg" alt="The Zing logo" />
       </div>
       <div class="links">
-        <a href="#">Get In Touch</a> | <a href="#">Resources</a> |
-        <a href="#">Glossary</a> | <a href="#">Careers</a>
+        <a href="/privacy">Privacy Policy</a> | <a href="/cookies">Cookies</a> |
+        <a
+          href="https://drive.google.com/uc?id=1EM1ffKnxVpQni3xdjZzmVqmLeNXg7ntL"
+          >Brand Guidelines</a
+        >
+        |
+        <a href="/contact-us">Contact Us</a>
       </div>
       <div class="social">
-        <a href="#">
-          <img src="public/images/facebook.png" alt="Go To Zing Facebook" />
+        <a href="https://www.linkedin.com/company/zing-dev/">
+          <img
+            src="public/images/linkedin.png"
+            alt="Go To Zing Linkedin"
+            title="LinkedIn"
+          />
         </a>
-        <a href="#">
-          <img src="public/images/twitter.png" alt="Go To Zing Twitter" />
+        <a href="https://twitter.com/zingdevs">
+          <img
+            src="public/images/twitter.png"
+            alt="Go To Zing Twitter"
+            title="Twitter"
+          />
         </a>
-        <a href="#">
-          <img src="public/images/linkedin.png" alt="Go To Zing Linkedin" />
+        <a href="https://github.com/ZingSolutions">
+          <img
+            src="public/images/GitHub.png"
+            alt="Go To Zing GitHub"
+            title="GitHub"
+          />
         </a>
-        <a href="#">
-          <img src="public/images/youtube.png" alt="Go To Zing YouTube" />
-        </a>
-        <a href="#">
-          <img src="public/images/instagram.png" alt="Go To Zing Instagram" />
+        <a href="https://www.youtube.com/channel/UCQaA6jM3zT6WcbXuzjgpAHw">
+          <img
+            src="public/images/youtube.png"
+            alt="Go To Zing YouTube"
+            title="YouTube"
+          />
         </a>
       </div>
       <div class="cr">
@@ -247,7 +261,7 @@
       </div>
     </footer>
     <script>
-      if (location.pathname != "") {
+      if (location.pathname != "/") {
         document
           .querySelectorAll(`li>a[href*='${location.pathname}']`)
           .forEach((link, key) => {
